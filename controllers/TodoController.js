@@ -20,6 +20,23 @@ class TodoController {
     });
   }
 
+  // getTodoById
+  static async getTodoById(req, res) {
+    const id = req.body.id;
+    await TodoModel.getTodoById(id).then((result) => {
+      res.json(result);
+    });
+  }
+
+  // Update todo status
+  static async updateTodoStatus(req, res) {
+    const id = req.body.id;
+    const status = req.body.status;
+    await TodoModel.updateTodoStatus(id, status).then(() => {
+      res.redirect("/");
+    });
+  }
+
   // Delete todo
   static async deleteTodoById(req, res) {
     const id = req.params.id;

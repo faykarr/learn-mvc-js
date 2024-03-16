@@ -15,6 +15,20 @@ class TodoModel {
         });
     }
 
+    // Get todo by id
+    static async getTodoById(id) {
+        return new Promise((resolve) => {
+            const query = `SELECT * FROM todo WHERE id = ${id}`;
+            db.query(query, (err, result) => {
+                if (err) {
+                    console.log(err);
+                    resolve(false);
+                }
+                resolve(result);
+            });
+        });
+    }
+
     // Insert new todo
     static async insertNewTodo(events, status) {
         return new Promise((resolve) => {
