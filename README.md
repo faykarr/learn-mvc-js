@@ -4,7 +4,7 @@ This is a simple fullstack todo list app built with Node.js, Express, and MongoD
 ## Access this project
 This project is hosted on my VPS. You can access it [here at todolist.faykarr.my.id](https://todolist.faykarr.my.id).
 
-## Installation
+## Installation on your local machine
 1. Clone the repository
 2. Run `npm install` to install the dependencies
 3. Run `npm start` to start the server
