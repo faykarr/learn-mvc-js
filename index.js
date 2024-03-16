@@ -8,6 +8,7 @@ const router = require("./routers/router");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(router);
+app.use(express.static("public"));
 
 // View engine ejs
 app.set("view engine", "ejs");
