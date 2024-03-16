@@ -13,10 +13,15 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 offset-md-3">
-                <h1 class="text-center mt-5">Todo List</h1>
+                <h1 class="text-center mt-5">Simple Todo List</h1>
+                <!-- App Description -->
+                <p class="text-center fs-6 fw-semibold">This is a simple todo list app using Node.js, Express.js, EJS
+                    Template Engine, and MySQL. This project is for mini project assignment of MVC subject in MSIB 6 -
+                    Mentor Rizky Aly</p>
                 <form id="todo-form" action="/addTodo" method="post">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" id="todo-input" placeholder="Add a new todo" name="events" required>
+                        <input type="text" class="form-control" id="todo-input" placeholder="Add a new todo"
+                            name="events" required>
                         <select class="form-select" id="todo-status" name="status">
                             <option value="Todo">Todo</option>
                             <option value="Work In Progress">Work In Progress</option>
@@ -28,19 +33,30 @@
                     </div>
                 </form>
                 <ul class="list-group" id="todo-list">
-                    <% todos.forEach(todo => { %>
+                    <% todos.forEach(todo=> { %>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
-                            <span><%= todo.id %></span>
-                            <span><%= todo.events %></span>
-                            <span><%= todo.status %></span>
+                            <span>
+                                <%= todo.id %>
+                            </span>
+                            <span>
+                                <%= todo.events %>
+                            </span>
+                            <span>
+                                <%= todo.status %>
+                            </span>
                             <div>
-                                <button class="btn btn-success btn-sm">Edit</button>
-                                <button class="btn btn-danger btn-sm">Delete</button>
+                                <a href="javascript:void(0)" class="btn btn-success btn-sm">Edit</a>
+                                <a href="/delete/<%= todo.id %>"
+                                    onclick="return confirm('Are you sure want to delete this data?')"
+                                    class="btn btn-danger btn-sm">Delete</a>
                             </div>
                         </li>
-                    <% }) %>
+                        <% }) %>
                 </ul>
             </div>
+            <!-- Copyright made with 💖 by faykarr -->
+            <p class="text-center fw-semibold mt-5">Made with 💖 by <a href="https://github.com/faykarr"
+                    target="_blank">faykarr</a></p>
         </div>
     </div>
 
