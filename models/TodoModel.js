@@ -15,11 +15,12 @@ class TodoModel {
     }
 
     static async insertNewTodo(events, status) {
-        return new Promise((err, resolve) => {
+        return new Promise((resolve) => {
             const query = `INSERT INTO todo (events, status) VALUES ('${events}', '${status}')`;
             db.query(query,(err, result) => {
                 if (err) {
-                    reject(err);
+                    console.log(err);
+                    resolve(false);
                 }
                 resolve(result);
             });

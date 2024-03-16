@@ -14,10 +14,17 @@
         <div class="row">
             <div class="col-md-6 offset-md-3">
                 <h1 class="text-center mt-5">Todo List</h1>
-                <form id="todo-form">
+                <form id="todo-form" action="/addTodo" method="post">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" id="todo-input" placeholder="Add a new todo">
-                        <button class="btn btn-primary" type="submit">Add</button>
+                        <input type="text" class="form-control" id="todo-input" placeholder="Add a new todo" name="events" required>
+                        <select class="form-select" id="todo-status" name="status">
+                            <option value="Todo">Todo</option>
+                            <option value="Work In Progress">Work In Progress</option>
+                            <option value="Finished">Finished</option>
+                        </select>
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="submit">Add</button>
+                        </div>
                     </div>
                 </form>
                 <ul class="list-group" id="todo-list">

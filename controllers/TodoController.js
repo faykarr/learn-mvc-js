@@ -13,12 +13,8 @@ class TodoController {
   static async insertNewTodo(req, res) {
     const events = req.body.events;
     const status = req.body.status;
-    try {
-      const newTodo = await TodoModel.insertNewTodo(events, status);
-      res.status(201).send(newTodo);
-    } catch (err) {
-      res.status(500).send(err);
-    }
+    await TodoModel.insertNewTodo(events, status);
+    res.redirect("/");
   }
 }
 
