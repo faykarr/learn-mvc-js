@@ -20,4 +20,4 @@ This is a simple fullstack todo list app built with Node.js, Express, and MongoD
 - Bootstrap
 
 ## Screenshots
-![screenshot](https://i.imgur.com/3z3v3ZM.png)
+![screenshot](./public/img/learn-mvc-js.png)
